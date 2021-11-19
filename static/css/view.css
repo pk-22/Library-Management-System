@@ -11,6 +11,7 @@ body{
     /* background: url('homebg.jpg') no-repeat;
     background-size: cover;
     background-position: center; */
+    background-color: #dbeeff;
 }
 header{
     position: sticky;
@@ -117,7 +118,13 @@ header label{
 /* form */
 .search{
     display: flex;
-    width: 100%;
+    width: 40%;
+    margin-left: 29%;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    padding-top: 30px;
+    padding-bottom: 30px;
     /* margin: 44px; */
     margin-top: 20px;
     align-items: center;
@@ -200,7 +207,10 @@ header label{
 }
 
 .table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+    background-color: #f3f3f3ce;
+}
+.table tbody tr:nth-of-type(odd) {
+    background-color: white;
 }
 .up{
     color: white;
@@ -339,6 +349,7 @@ header label{
     .search{
         margin: 0;
         flex-direction: column;
+        width: 100%;
     }
     .input{
         width: 50%;
@@ -378,4 +389,5 @@ header label{
     .profile_table td{
         margin-right: 10px;
     }
+    
 }

@@ -8,9 +8,10 @@
 }
 body{
     min-height: 100vh;
-    /* background: url('homebg.jpg') no-repeat;
-    background-size: cover;
-    background-position: center; */
+    /* background: url('images/bgmain.jpg') no-repeat; */
+    /* background-size: cover; */
+    /* background-position: center;  */
+    background-color: #dbeeff;
 }
 header{
     position: sticky;
@@ -116,12 +117,17 @@ header label{
 /* book search */
 .container{
     display: flex;
-    width: 100%;
+    width: 40%;
+    margin-left: 29%;
     margin-top: 60px;
     /* margin: 44px; */
+    padding-top: 30px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 .form{
     padding: 2px 5px;
@@ -349,5 +355,9 @@ header label{
         margin-left: 10px;
         margin-top: 8px;
         width: 30%;
+    }
+    .container{
+        width: 80%;
+        margin-left: 9%;
     }
 }

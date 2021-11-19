@@ -11,6 +11,8 @@ body{
     /* background: url('homebg.jpg') no-repeat;
     background-size: cover;
     background-position: center; */
+    background-color:#dbeeff; 
+    
 }
 header{
     position: sticky;
@@ -147,7 +149,7 @@ header label{
 }
 .container h2{
     margin-bottom: 50px;
-    margin-left: 25%;
+    margin-left: 37%;
 }
 /* .container h2 img{
     margin-right: 10px;
@@ -155,7 +157,7 @@ header label{
 } */
 .row{
     width: 50%;
-    margin-left: 0%;
+    margin-left: 24%;
     display: flex;
 }
 .row img{
@@ -183,7 +185,10 @@ header label{
 }
 
 .table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+    background-color: #f3f3f3ce;
+}
+.table tbody tr:nth-of-type(odd) {
+    background-color: white;
 }
 .up{
     color: white;
@@ -212,7 +217,7 @@ header label{
     display: block;
     width: 10%;
     font-size: 14px;
-    margin-left: 12%;
+    margin-left: 36%;
     cursor: pointer;
     outline: none;
     padding: 4px 0px;

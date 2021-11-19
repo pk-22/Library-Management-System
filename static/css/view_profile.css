@@ -12,6 +12,7 @@ body{
     /* background: url('homebg.jpg') no-repeat;
     background-size: cover;
     background-position: center; */
+    background-color: #dbeeff;
 }
 header{
     position: sticky;
@@ -116,6 +117,11 @@ header label{
 }
 /* book search */
 .search{
+    width: 40%;
+    margin-left: 29%;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     display: flex;
     margin: 44px;
     align-items: center;
@@ -159,6 +165,8 @@ header label{
     /* min-width: 400px; */
     font-size: 1.1rem;
     border-collapse: collapse;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
     /* border-spacing: 0px 10px; */
     
 }
@@ -174,7 +182,10 @@ header label{
     border-bottom: 1px solid black;
 } */
 .profile_table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+    background-color: #f3f3f3ce;
+}
+.profile_table tbody tr:nth-of-type(odd) {
+    background-color: white;
 }
 
 
@@ -220,7 +231,10 @@ header label{
 }
 
 .table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+    background-color: #f3f3f3ce;
+}
+.table tbody tr:nth-of-type(odd) {
+    background-color: white;
 }
 .up{
     color: white;

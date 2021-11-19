@@ -11,7 +11,7 @@ body{
     /* background: url('homebg.jpg') no-repeat;
     background-size: cover;
     background-position: center; */
-    /* background-color: beige; */
+    background-color: #dbeeff;
 }
 header{
     position: sticky;
@@ -118,6 +118,13 @@ header label{
 .search{
     display: flex;
     margin: 44px;
+    width: 40%;
+    margin-left: 29%;
+    background-color: white;
+    border-radius: 5px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
     align-items: center;
     justify-content: center;
 }
@@ -199,7 +206,10 @@ header label{
 }
 
 .table tbody tr:nth-of-type(even) {
-    background-color: #f3f3f3;
+    background-color: #f3f3f3ce;
+}
+.table tbody tr:nth-of-type(odd) {
+    background-color: white;
 }
 .up{
     color: white;
@@ -321,6 +331,8 @@ header label{
     }
     .search{
         margin: 80px;
+        width: 100%;
+        margin-left: 0;
     }
     .container h2{
         text-align: center;
