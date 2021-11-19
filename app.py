@@ -914,9 +914,10 @@ def view_shelf():
                     msg = "Shelf Is Empty"
             else:
                 msg = "Please Enter Valid Shelf ID"
+                return render_template('view_shelf.html',msg=msg)    
+            mysql.connection.commit()
+            cursor.close()
             return render_template('view_shelf.html',detail = result, msg = msg) 
-        mysql.connection.commit()
-        cursor.close()
     elif request.method == 'POST':
         msg = "Please Fill Out Form !"
         return render_template('view_shelf.html', msg = msg)     
@@ -1167,13 +1168,13 @@ def manage_fines():
         cursor.execute("SELECT U_ID, accession_number, start_date, due_date, fine FROM Issue_Book WHERE U_ID=%s",(U_ID,))
         detail = cursor.fetchall()
         if detail:
-            return render_template('manage_fines.html',detail = detail, msg1 = 'Fine Due For The User')
+            return render_template('manage_fines.html',detail = detail, msg = 'Fine Due For The User')
         else:
-            return render_template('manage_fines.html',msg1 = "User Has No Dues")
+            return render_template('manage_fines.html',msg = "User Has No Dues")
     elif result:
-        return render_template('manage_fines.html', detail =result, msg1 = "Dues For Each Book")
+        return render_template('manage_fines.html', detail =result, msg = "Dues For Each Book")
     else:
-        return render_template("manage_fines.html", msg1 = "All Dues Are Cleared")
+        return render_template("manage_fines.html", msg = "All Dues Are Cleared")
 
 
 @app.route("/clear_fines/<string:uid>/<string:id>",methods=['POST','GET'])
