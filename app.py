@@ -521,7 +521,7 @@ def delete_user():
             if detail:
                 msg = "Cannot Remove User As Book Is Issued By User"
             else:
-                cur.execute("SELECT accession_number FROM Reserve_Book WHERE U_ID=%s",(id))
+                cur.execute("SELECT accession_number FROM Reserve_Book WHERE U_ID=%s",(id,))
                 reserve = cur.fetchall()
                 for j in reserve:
                     status = 'no'
@@ -545,14 +545,14 @@ def delete_profile():
     email = session['email']
     password = session['password']
     cur = mysql.connection.cursor(MySQLdb.cursors.DictCursor)
-    cur.execute("SELECT U_ID FROM users WHERE email=%s AND password=%s",(email, password,))
+    cur.execute("SELECT U_ID,name,address,email FROM users WHERE email=%s AND password=%s",(email, password,))
     aa = cur.fetchone()
     id = aa['U_ID']
     cur.execute("SELECT U_ID, accession_number FROM Issue_Book where U_ID = %s",(id,))
     detail = cur.fetchall()
     if detail:
         msg = "Cannot Delete Account As You Have Issued One Or More Than One Book"
-        return render_template('profile.html',msg = msg)
+        return render_template('profile.html',U_ID=aa['U_ID'],name=aa['name'],email=aa['email'],address=aa['address'],msg = msg)
     else:
         cur.execute("SELECT accession_number FROM Reserve_Book WHERE U_ID=%s",(id,))
         reserve = cur.fetchall()
