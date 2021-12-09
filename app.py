@@ -1048,13 +1048,15 @@ def return_book():
             cursor.execute('select U_ID, accession_number from Issue_Book where accession_number=%s' , (accession_number,)) 
             cc = cursor.fetchone()
             if aa and bb and cc:
-                cursor.execute('select fine from Issue_Book where accession_number=%s' , (accession_number,))
+                cursor.execute('select * from Issue_Book where accession_number=%s AND U_ID=%s' , (accession_number,U_ID,))
                 pp=cursor.fetchone()
                 cursor.execute('select book_reserve_status from book where accession_number=%s' , (accession_number,))
                 qq=cursor.fetchone()
                 if pp['fine']>0:
-                    msg='please pay the unpaid fines first'
-                    return render_template('manage_fines.html',detail = pp, msg = msg)
+                    msg='please pay the unpaid fines of: Rs. '
+                    cursor.execute("SELECT U_ID, accession_number, start_date, due_date, fine FROM Issue_Book WHERE U_ID=%s AND accession_number=%s",(U_ID,accession_number,))
+                    det = cursor.fetchone()
+                    return render_template('return_book.html',fine = det['fine'], msg = msg)
                 elif qq['book_reserve_status']=="no":
                     cursor.execute('delete from Issue_Book where accession_number=%s' , (accession_number,))
                     cursor.execute('update book set book_shelf_status="available" where accession_number=%s' , (accession_number,))

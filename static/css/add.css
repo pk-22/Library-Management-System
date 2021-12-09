@@ -8,10 +8,10 @@
 }
 body{
     min-height: 100vh;
-    /* background: url('images/bgmain.jpg') no-repeat; */
-    /* background-size: cover; */
-    /* background-position: center;  */
-    background-color: #dbeeff;
+    min-height: 100vh;
+    background: url('images/bg.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 header{
     position: sticky;

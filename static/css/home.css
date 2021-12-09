@@ -99,7 +99,7 @@ header label{
 }
 #home::before{
     content: "";
-    background: url('images/homebg.jpg') no-repeat center center/cover;
+    background: url('images/bg1.jpg') no-repeat center center/cover;
     position: absolute;
     top: 0px;
     left: 0px;
